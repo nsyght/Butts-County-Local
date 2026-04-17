@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#2D6A4F">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <title>About Us — Butts County Local</title>
+  <meta name="description" content="Learn about Butts County Local, the free business directory for Jackson, GA and all of Butts County, Georgia.">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  "name": "About Butts County Local",
+  "description": "Learn about Butts County Local, the free business directory for Jackson, GA and Butts County.",
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": [".speakable"]
+  }
+}
+  </script>
+  <style>
+
+    :root {
+      --primary: #2D6A4F;
+      --primary-dark: #1B4332;
+      --primary-light: #52B788;
+      --primary-pale: #E9F5EE;
+      --dark: #1A1A2E;
+      --dark2: #252540;
+      --white: #FFFFFF;
+      --gray-50: #FAFAFA;
+      --gray-100: #F5F5F5;
+      --gray-200: #E8E8E8;
+      --text: #1A1A2E;
+      --text-muted: #666;
+      --radius: 10px;
+      --shadow: 0 2px 12px rgba(0,0,0,.08);
+      --shadow-lg: 0 8px 32px rgba(0,0,0,.14);
+    }
+
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Inter', sans-serif; background: var(--gray-50); color: var(--text); }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+
+    /* ── HEADER ── */
+    .site-header {
+      background: var(--dark);
+      position: sticky; top: 0; z-index: 100;
+      box-shadow: 0 2px 8px rgba(0,0,0,.3);
+    }
+    .header-inner {
+      max-width: 1200px; margin: 0 auto;
+      padding: 0 20px;
+      display: flex; align-items: center; gap: 24px;
+      height: 64px;
+    }
+    .site-logo {
+      display: flex; align-items: center; gap: 10px;
+      font-size: 1.35rem; font-weight: 800; color: var(--white);
+      white-space: nowrap;
+    }
+    .site-logo .logo-icon { font-size: 1.5rem; }
+    .site-logo span b { color: var(--primary-light); }
+    .header-nav { display: flex; align-items: center; gap: 6px; flex: 1; }
+    .header-nav a {
+      color: rgba(255,255,255,.8); font-size: .875rem; font-weight: 500;
+      padding: 6px 12px; border-radius: 6px;
+      transition: color .2s, background .2s;
+    }
+    .header-nav a:hover { color: var(--white); background: rgba(255,255,255,.1); }
+    .header-nav .btn-add {
+      margin-left: auto;
+      background: var(--primary); color: var(--white) !important;
+      padding: 8px 16px; border-radius: 8px; font-weight: 700; font-size: .85rem;
+    }
+    .header-nav .btn-add:hover { background: var(--primary-dark) !important; }
+    .burger { display: none; cursor: pointer; color: var(--white); font-size: 1.4rem; margin-left: auto; }
+
+    /* ── FOOTER ── */
+    .site-footer { background: var(--dark); color: rgba(255,255,255,.75); margin-top: 60px; }
+    .footer-inner { max-width: 1200px; margin: 0 auto; padding: 48px 20px 20px; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; }
+    .footer-brand .logo { font-size: 1.2rem; font-weight: 800; color: var(--white); margin-bottom: 10px; }
+    .footer-brand .logo b { color: var(--primary-light); }
+    .footer-brand p { font-size: .85rem; line-height: 1.6; }
+    .footer-socials { display: flex; gap: 12px; margin-top: 16px; }
+    .footer-socials a { width: 34px; height: 34px; border-radius: 50%; background: rgba(255,255,255,.1); display: grid; place-items: center; font-size: .9rem; transition: background .2s; }
+    .footer-socials a:hover { background: var(--primary); }
+    .footer-col h4 { color: var(--white); font-size: .8rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; margin-bottom: 14px; }
+    .footer-col a { display: block; font-size: .85rem; color: rgba(255,255,255,.65); padding: 3px 0; transition: color .2s; }
+    .footer-col a:hover { color: var(--primary-light); }
+    .footer-bottom { max-width: 1200px; margin: 0 auto; padding: 16px 20px; border-top: 1px solid rgba(255,255,255,.1); display: flex; justify-content: space-between; align-items: center; font-size: .78rem; color: rgba(255,255,255,.45); }
+    .footer-bottom a:hover { color: var(--primary-light); }
+
+    /* ── RESPONSIVE ── */
+    @media(max-width:900px) {
+      .footer-inner { grid-template-columns: 1fr 1fr; }
+    }
+    @media(max-width:640px) {
+      .header-nav { display: none; flex-direction: column; position: absolute; top: 64px; left: 0; right: 0; background: var(--dark2); padding: 12px 20px 20px; gap: 4px; }
+      .header-nav.open { display: flex; }
+      .header-nav .btn-add { margin-left: 0; text-align: center; }
+      .burger { display: block; }
+      .footer-inner { grid-template-columns: 1fr; gap: 24px; }
+    }
+
+
+    .page-hero { background:linear-gradient(135deg,var(--dark),var(--primary-dark)); color:var(--white); padding:48px 20px; text-align:center; }
+    .page-hero h1 { font-size:2rem; font-weight:800; }
+    .page-hero p { opacity:.85; margin-top:10px; font-size:1rem; }
+    .page-content { max-width:860px; margin:40px auto; padding:0 20px 60px; }
+    .prose { background:var(--white); border-radius:var(--radius); box-shadow:var(--shadow); padding:36px; line-height:1.75; color:var(--text-muted); }
+    .prose h2 { font-size:1.1rem; font-weight:700; color:var(--text); margin:28px 0 10px; }
+    .prose h2:first-child { margin-top:0; }
+    .prose a { color:var(--primary); }
+    .prose p { margin-bottom:14px; }
+    .stat-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); gap:16px; margin:24px 0; }
+    .stat-box { background:var(--primary-pale); border-radius:10px; padding:20px; text-align:center; }
+    .stat-box .num { font-size:2rem; font-weight:800; color:var(--primary); }
+    .stat-box .lbl { font-size:.8rem; color:var(--text-muted); margin-top:4px; }
+
+
+    .history-section { margin-top: 36px; }
+    .history-section h2 { font-size: 1.1rem; font-weight: 700; color: var(--text); margin: 28px 0 10px; }
+    .history-section h2:first-child { margin-top: 0; }
+    .timeline { border-left: 3px solid var(--primary); padding-left: 24px; margin: 20px 0; }
+    .timeline-item { position: relative; margin-bottom: 20px; }
+    .timeline-item::before {
+      content: ''; position: absolute; left: -31px; top: 5px;
+      width: 12px; height: 12px; border-radius: 50%;
+      background: var(--primary); border: 2px solid var(--white);
+      box-shadow: 0 0 0 2px var(--primary);
+    }
+    .timeline-item .year { font-size: .78rem; font-weight: 800; color: var(--primary); text-transform: uppercase; letter-spacing: .06em; margin-bottom: 4px; }
+    .timeline-item p { font-size: .9rem; color: var(--text-muted); line-height: 1.6; margin: 0; }
+    .fun-fact { background: var(--primary-pale); border-left: 4px solid var(--primary); border-radius: 0 8px 8px 0; padding: 14px 18px; margin: 20px 0; font-size: .9rem; color: var(--text-muted); line-height: 1.6; }
+    .fun-fact strong { color: var(--primary-dark); }
+
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/index.html" class="site-logo">
+        <span class="logo-icon">🍑</span>
+        <span><b>Butts County</b> Local</span>
+      </a>
+      <nav class="header-nav" id="mainNav">
+        <a href="/index.html">Directory</a>
+        <a href="/blog.html">Blog</a>
+        <a href="/events.html">Events</a>
+        <a href="/deals.html">Deals</a>
+        <a href="/march-2026-business-spotlight.html">Spotlight</a>
+        <a href="/about.html">About</a>
+        <a href="/contact.html">Contact</a>
+        <a href="/add-listing.html" class="btn-add">+ Free Listing</a>
+      </nav>
+      <button class="burger" onclick="document.getElementById('mainNav').classList.toggle('open')">☰</button>
+    </div>
+  </header>
+
+<div class="page-hero">
+  <h1 class="speakable">About Butts County Local</h1>
+  <p class="speakable">Connecting neighbors with the local businesses that make Butts County great.</p>
+</div>
+
+<div class="page-content">
+  <div class="prose">
+    <h2>Our Mission</h2>
+    <p class="speakable">Butts County Local is a free, community-driven business directory dedicated to helping residents of Jackson and Butts County, Georgia discover and support the local businesses that make our community thrive. We believe that when you shop local, eat local, and hire local, the whole county wins.</p>
+
+    <h2>Why Butts County?</h2>
+    <p>Butts County is one of Georgia's most charming communities — home to Indian Springs State Park (one of the oldest state parks in the United States), the stunning High Falls State Park, and the beloved Dauset Trails Nature Center. Jackson, the county seat, has a rich history, a welcoming small-town spirit, and a growing local business scene that deserves a spotlight.</p>
+    <p>We built this directory because we know it can be hard to discover all the great small businesses operating right here in our own backyard. From the diner that's been feeding breakfast to three generations of families to the new boutique fitness studio that just opened on the square — they all deserve to be found.</p>
+
+    <h2>By the Numbers</h2>
+    <div class="stat-grid">
+      <div class="stat-box"><div class="num">20+</div><div class="lbl">Businesses Listed</div></div>
+      <div class="stat-box"><div class="num">10</div><div class="lbl">Categories</div></div>
+      <div class="stat-box"><div class="num">Free</div><div class="lbl">Always Free to List</div></div>
+      <div class="stat-box"><div class="num">1</div><div class="lbl">Great County</div></div>
+    </div>
+
+    <h2>How It Works</h2>
+    <p>Butts County Local is completely free to use — for businesses and for visitors. Browse by category, search by name, or explore the full directory. Each listing includes contact information, hours, a description, and an embedded map so you can find your way there.</p>
+    <p>Business owners can submit a free listing using our <a href="/add-listing.html">Add Listing</a> form. We review submissions and typically have new listings live within 48 hours. There's no cost, no subscription, and no catch.</p>
+
+    <h2>Contact Us</h2>
+    <p>Have a question, found an error, or want to advertise with us? We'd love to hear from you. Visit our <a href="/contact.html">Contact page</a> or email us directly. We're always looking for ways to make Butts County Local more useful for our community.</p>
+  </div>
+
+  <div class="prose history-section" style="margin-top:24px;">
+    <h2>🏛️ History of Butts County</h2>
+    <p>Butts County has a rich and layered history stretching back over two centuries. Here's a look at the key milestones that shaped the county and its communities into what they are today.</p>
+
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="year">December 24, 1825 — Founded</div>
+        <p>Butts County was established as the 64th county in Georgia, carved out of portions of Henry and Monroe Counties by the Georgia General Assembly. The county was named in honor of <strong>Samuel Butts</strong>, an officer who gave his life during the Creek War in 1814.</p>
+      </div>
+      <div class="timeline-item">
+        <div class="year">1826 — Jackson Established</div>
+        <p>Jackson was established as the county's first city and designated as the county seat — a role it has held ever since. Towns that followed include Indian Springs (1837), Flovilla (1883), Jenkinsburg (1889), and Pepperton (1897).</p>
+      </div>
+      <div class="timeline-item">
+        <div class="year">1864 — Civil War Destruction</div>
+        <p>Much of Butts County was devastated during General William T. Sherman's March to the Sea. The county spent decades rebuilding its economy and communities in the aftermath.</p>
+      </div>
+      <div class="timeline-item">
+        <div class="year">May 5, 1882 — The Railroad Arrives</div>
+        <p>The arrival of the first railroad in Butts County marked a turning point. The rail connection opened new economic opportunities and triggered a period of renewed growth and commerce for Jackson and the surrounding area.</p>
+      </div>
+      <div class="timeline-item">
+        <div class="year">1884–1926 — Modern Milestones</div>
+        <p>Progress came steadily: first telephones in 1884, public waterworks in 1905, electric lights on February 19, 1907, and traffic lights in 1926 — each a milestone in the county's modernization.</p>
+      </div>
+      <div class="timeline-item">
+        <div class="year">1898 — The Courthouse</div>
+        <p>Butts County erected a monumental courthouse designed by the prominent firm Bruce &amp; Morgan. This landmark served as the active courthouse until 2019, when it was renovated and transformed into a museum and visitor center.</p>
+      </div>
+      <div class="timeline-item">
+        <div class="year">1910 — Jackson Lake Created</div>
+        <p>Construction of the Lloyd Shoals Dam on the Ocmulgee River created Jackson Lake, a recreational lake that remains a beloved destination for fishing, boating, and outdoor recreation.</p>
+      </div>
+      <div class="timeline-item">
+        <div class="year">2007 — Georgia Signature Community</div>
+        <p>Butts County and the city of Flovilla were jointly designated Georgia Signature Communities by the Georgia Department of Community Affairs — a prestigious recognition awarded to just 12 communities statewide that year.</p>
+      </div>
+      <div class="timeline-item">
+        <div class="year">2016–Present — Stranger Things</div>
+        <p>Downtown Jackson stepped into the cultural spotlight when Netflix's <em>Stranger Things</em> chose the city as its filming location, standing in for the fictional Hawkins, Indiana. The Butts County Courthouse appeared in the show as the Hawkins Public Library. Fans from across the country have since visited to see filming locations in person.</p>
+      </div>
+    </div>
+
+    <div class="fun-fact">
+      <strong>📍 Did you know?</strong> According to the 2010 U.S. Census, the geographic center of population for the entire state of Georgia was located in the northeastern portion of Butts County — making Jackson literally the heart of the state.
+    </div>
+
+    <p style="font-size:.85rem;color:var(--text-muted);margin-top:16px;">History sourced and paraphrased from <a href="https://en.wikipedia.org/wiki/Butts_County,_Georgia" target="_blank">Wikipedia: Butts County, Georgia</a>.</p>
+  </div>
+</div>
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="logo">🍑 <b>Butts County</b> Local</div>
+        <p>The free local business directory for Butts County, GA. Connecting the community since 2025.</p>
+        <div class="footer-socials">
+          <a href="#" title="Facebook">📘</a>
+          <a href="#" title="Instagram">📷</a>
+          <a href="#" title="X / Twitter">🐦</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <a href="/index.html">Browse All</a>
+        <a href="/blog.html">Blog &amp; Guides</a>
+        <a href="/events.html">Events Calendar</a>
+        <a href="/deals.html">Deals &amp; Specials</a>
+        <a href="/march-2026-business-spotlight.html">Business Spotlight</a>
+      </div>
+      <div class="footer-col">
+        <h4>Business Owners</h4>
+        <a href="/add-listing.html">Add Free Listing</a>
+        <a href="/advertise.html">Advertise With Us</a>
+        <a href="/contact.html">Contact Us</a>
+        <a href="https://www.buttscounty.org" target="_blank">Butts County Gov</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="/about.html">About Us</a>
+        <a href="/new-to-jackson.html">New Resident Guide</a>
+        <a href="/privacy.html">Privacy Policy</a>
+        <a href="/terms.html">Terms of Service</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Butts County Local · Not affiliated with Butts County Government or Butts County Schools</span>
+      <span><a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a></span>
+    </div>
+  </footer>
+  <script>
+    document.addEventListener('click', function(e){
+      var nav = document.getElementById('mainNav');
+      var burger = document.querySelector('.burger');
+      if(nav && !nav.contains(e.target) && burger && !burger.contains(e.target)){
+        nav.classList.remove('open');
+      }
+    });
+  </script>
+</body>
+</html>

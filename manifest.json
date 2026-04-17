@@ -1,0 +1,16 @@
+{
+  "name": "Butts County Local",
+  "short_name": "BCLocal",
+  "description": "Free local business directory for Butts County, GA",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#2D6A4F",
+  "theme_color": "#2D6A4F",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

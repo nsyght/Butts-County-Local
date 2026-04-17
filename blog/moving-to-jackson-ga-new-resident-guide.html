@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#2D6A4F">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <title>Moving to Jackson, GA? Your Complete New Resident Guide — Butts County Local</title>
+  <meta name="description" content="Everything you need to know about moving to Jackson, GA and Butts County — from schools and healthcare to local restaurants and things to do.">
+  <style>
+
+    :root {
+      --primary: #2D6A4F;
+      --primary-dark: #1B4332;
+      --primary-light: #52B788;
+      --primary-pale: #E9F5EE;
+      --dark: #1A1A2E;
+      --dark2: #252540;
+      --white: #FFFFFF;
+      --gray-50: #FAFAFA;
+      --gray-100: #F5F5F5;
+      --gray-200: #E8E8E8;
+      --text: #1A1A2E;
+      --text-muted: #666;
+      --radius: 10px;
+      --shadow: 0 2px 12px rgba(0,0,0,.08);
+      --shadow-lg: 0 8px 32px rgba(0,0,0,.14);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Inter', sans-serif; background: var(--gray-50); color: var(--text); }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+    .site-header { background: var(--dark); position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 8px rgba(0,0,0,.3); }
+    .header-inner { max-width: 1200px; margin: 0 auto; padding: 0 20px; display: flex; align-items: center; gap: 20px; height: 64px; }
+    .site-logo { display: flex; align-items: center; gap: 10px; font-size: 1.35rem; font-weight: 800; color: var(--white); white-space: nowrap; }
+    .site-logo .logo-icon { font-size: 1.5rem; }
+    .site-logo span b { color: var(--primary-light); }
+    .header-nav { display: flex; align-items: center; gap: 4px; flex: 1; flex-wrap: wrap; }
+    .header-nav a { color: rgba(255,255,255,.8); font-size: .82rem; font-weight: 500; padding: 6px 10px; border-radius: 6px; transition: color .2s, background .2s; }
+    .header-nav a:hover { color: var(--white); background: rgba(255,255,255,.1); }
+    .header-nav .btn-add { margin-left: auto; background: var(--primary); color: var(--white) !important; padding: 8px 14px; border-radius: 8px; font-weight: 700; font-size: .82rem; }
+    .header-nav .btn-add:hover { background: var(--primary-dark) !important; }
+    .burger { display: none; cursor: pointer; color: var(--white); font-size: 1.4rem; margin-left: auto; }
+    .site-footer { background: var(--dark); color: rgba(255,255,255,.75); margin-top: 60px; }
+    .footer-inner { max-width: 1200px; margin: 0 auto; padding: 48px 20px 20px; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; }
+    .footer-brand .logo { font-size: 1.2rem; font-weight: 800; color: var(--white); margin-bottom: 10px; }
+    .footer-brand .logo b { color: var(--primary-light); }
+    .footer-brand p { font-size: .85rem; line-height: 1.6; }
+    .footer-socials { display: flex; gap: 12px; margin-top: 16px; }
+    .footer-socials a { width: 34px; height: 34px; border-radius: 50%; background: rgba(255,255,255,.1); display: grid; place-items: center; font-size: .9rem; }
+    .footer-socials a:hover { background: var(--primary); }
+    .footer-col h4 { color: var(--white); font-size: .8rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; margin-bottom: 14px; }
+    .footer-col a { display: block; font-size: .85rem; color: rgba(255,255,255,.65); padding: 3px 0; }
+    .footer-col a:hover { color: var(--primary-light); }
+    .footer-bottom { max-width: 1200px; margin: 0 auto; padding: 16px 20px; border-top: 1px solid rgba(255,255,255,.1); display: flex; justify-content: space-between; font-size: .78rem; color: rgba(255,255,255,.45); }
+    @media(max-width:900px) { .footer-inner { grid-template-columns: 1fr 1fr; } }
+    @media(max-width:640px) { .header-nav { display: none; flex-direction: column; position: absolute; top: 64px; left: 0; right: 0; background: var(--dark2); padding: 12px 20px 20px; gap: 4px; } .header-nav.open { display: flex; } .header-nav .btn-add { margin-left: 0; text-align: center; } .burger { display: block; } .footer-inner { grid-template-columns: 1fr; gap: 24px; } }
+
+    .post-hero { background: linear-gradient(135deg, var(--dark), var(--primary-dark)); color: var(--white); padding: 56px 20px; text-align: center; }
+    .post-hero .cat-label { font-size: .75rem; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: var(--primary-light); margin-bottom: 10px; }
+    .post-hero h1 { font-size: clamp(1.5rem,4vw,2.4rem); font-weight: 800; max-width: 700px; margin: 0 auto 12px; line-height: 1.2; }
+    .post-hero .meta { font-size: .85rem; opacity: .75; }
+    .post-body { max-width: 760px; margin: 48px auto 80px; padding: 0 20px; }
+    .post-body p { font-size: 1rem; line-height: 1.85; color: var(--text-muted); margin-bottom: 20px; }
+    .post-body h2 { font-size: 1.2rem; font-weight: 700; color: var(--text); margin: 32px 0 12px; }
+    .post-body a { color: var(--primary); }
+    .back-link { display: inline-block; color: var(--primary); font-weight: 600; font-size: .9rem; margin-bottom: 32px; }
+    .back-link:hover { text-decoration: underline; }
+    .post-footer { background: var(--primary-pale); border-radius: 12px; padding: 28px; margin-top: 40px; text-align: center; }
+    .post-footer h3 { font-size: 1rem; font-weight: 700; margin-bottom: 8px; }
+    .post-footer p { font-size: .88rem; color: var(--text-muted); margin-bottom: 16px; }
+    .btn-green { display: inline-block; background: var(--primary); color: var(--white); font-weight: 700; padding: 10px 24px; border-radius: 8px; font-size: .9rem; }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/index.html" class="site-logo"><span class="logo-icon">🍑</span><span><b>Butts County</b> Local</span></a>
+      <nav class="header-nav" id="mainNav">
+        <a href="/index.html">Directory</a>
+        <a href="/blog.html">Blog</a>
+        <a href="/events.html">Events</a>
+        <a href="/deals.html">Deals</a>
+        <a href="/march-2026-business-spotlight.html">Spotlight</a>
+        <a href="/about.html">About</a>
+        <a href="/contact.html">Contact</a>
+        <a href="/add-listing.html" class="btn-add">+ Free Listing</a>
+      </nav>
+      <button class="burger" onclick="document.getElementById('mainNav').classList.toggle('open')">☰</button>
+    </div>
+  </header>
+
+<div class="post-hero">
+  <div class="cat-label">Community</div>
+  <h1>Moving to Jackson, GA? Your Complete New Resident Guide</h1>
+  <div class="meta">March 3, 2026 &nbsp;·&nbsp; 9 min read</div>
+</div>
+<div class="post-body">
+  <a href="/blog.html" class="back-link">← Back to Blog</a>
+  <p>So you're moving to Jackson, GA — or at least considering it. Welcome to one of Middle Georgia's most underrated communities. Here's what you need to know before you arrive, and where to find everything once you're here.</p>
+
+<h2>The Big Picture</h2>
+<p>Jackson is the county seat of Butts County, located about 50 miles south of Atlanta along I-75. The population hovers around 5,000 in the city, with about 25,000 in the county overall. It's genuinely small-town Georgia — in all the best ways. The pace is slower, the neighbors know each other, and the land is beautiful.</p>
+
+<h2>Cost of Living</h2>
+<p>One of the primary draws for people relocating from Atlanta and other metros is the dramatically lower cost of living. Housing prices in Butts County remain well below the state average, and you'll find everything from historic homes on the courthouse square to new construction subdivisions on the county's outskirts.</p>
+
+<h2>Schools</h2>
+<p>The Butts County School System serves K-12 students across five schools. The district has been investing in facilities and programs in recent years. Jackson High School is home to the Red Devils, and athletics are a significant part of community life. Check the district's website at bcssk12.org for enrollment information.</p>
+
+<h2>Healthcare</h2>
+<p>For primary care, Butts County has several local clinics including Aylo Health on W. 3rd Street, which accepts walk-in appointments and is open evenings and weekends. For dental care, Bhat Dental Associates is highly rated with nearly 400 Google reviews. The nearest major hospital facilities are in McDonough and Griffin.</p>
+
+<h2>Getting Around</h2>
+<p>Jackson is a car-dependent community — there's no public transit to speak of. I-75 provides quick access north to Atlanta (about an hour in normal traffic) and south toward Macon. GA-16 connects east toward Monticello and west toward Griffin.</p>
+
+<h2>Finding Your Community</h2>
+<p>The best way to plug in quickly is through local events, the Butts County Chamber of Commerce, and by patronizing downtown businesses. The courthouse square is the social hub of the community, and local restaurants like Lucy Lu's Coffee and Mesquite Mexican Grill are natural gathering spots.</p>
+  <div class="post-footer">
+    <h3>🍑 Find Local Businesses in Butts County</h3>
+    <p>Browse the full directory of Jackson, GA businesses — restaurants, services, recreation, and more. All free.</p>
+    <a href="/index.html" class="btn-green">Browse the Directory →</a>
+  </div>
+</div>
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="logo">🍑 <b>Butts County</b> Local</div>
+        <p>The free local business directory for Butts County, GA. Connecting the community since 2025.</p>
+        <div class="footer-socials"><a href="#" title="Facebook">📘</a><a href="#" title="Instagram">📷</a><a href="#" title="X">🐦</a></div>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <a href="/index.html">Browse All</a>
+        <a href="/blog.html">Blog & Guides</a>
+        <a href="/events.html">Events Calendar</a>
+        <a href="/deals.html">Deals & Specials</a>
+        <a href="/march-2026-business-spotlight.html">Business Spotlight</a>
+      </div>
+      <div class="footer-col">
+        <h4>Business Owners</h4>
+        <a href="/add-listing.html">Add Free Listing</a>
+        <a href="/advertise.html">Advertise With Us</a>
+        <a href="/contact.html">Contact Us</a>
+        <a href="https://www.buttscounty.org" target="_blank">Butts County Gov</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="/about.html">About Us</a>
+        <a href="/privacy.html">Privacy Policy</a>
+        <a href="/terms.html">Terms of Service</a>
+        <a href="/new-to-jackson.html">New Resident Guide</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Butts County Local · Not affiliated with Butts County Government</span>
+      <span><a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a></span>
+    </div>
+  </footer>
+  <script>
+    document.addEventListener('click',function(e){
+      var nav=document.getElementById('mainNav'),burger=document.querySelector('.burger');
+      if(nav&&!nav.contains(e.target)&&burger&&!burger.contains(e.target))nav.classList.remove('open');
+    });
+  </script>
+</body>
+</html>

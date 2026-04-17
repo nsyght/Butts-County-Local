@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#2D6A4F">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <title>Dauset Trails Nature Center — What to Expect on Your Visit — Butts County Local</title>
+  <meta name="description" content="Dauset Trails is one of Butts County's best-kept secrets — 1,200 acres of trails, wildlife, and free admission. Here's everything you need to plan your visit.">
+  <style>
+
+    :root {
+      --primary: #2D6A4F;
+      --primary-dark: #1B4332;
+      --primary-light: #52B788;
+      --primary-pale: #E9F5EE;
+      --dark: #1A1A2E;
+      --dark2: #252540;
+      --white: #FFFFFF;
+      --gray-50: #FAFAFA;
+      --gray-100: #F5F5F5;
+      --gray-200: #E8E8E8;
+      --text: #1A1A2E;
+      --text-muted: #666;
+      --radius: 10px;
+      --shadow: 0 2px 12px rgba(0,0,0,.08);
+      --shadow-lg: 0 8px 32px rgba(0,0,0,.14);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Inter', sans-serif; background: var(--gray-50); color: var(--text); }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+    .site-header { background: var(--dark); position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 8px rgba(0,0,0,.3); }
+    .header-inner { max-width: 1200px; margin: 0 auto; padding: 0 20px; display: flex; align-items: center; gap: 20px; height: 64px; }
+    .site-logo { display: flex; align-items: center; gap: 10px; font-size: 1.35rem; font-weight: 800; color: var(--white); white-space: nowrap; }
+    .site-logo .logo-icon { font-size: 1.5rem; }
+    .site-logo span b { color: var(--primary-light); }
+    .header-nav { display: flex; align-items: center; gap: 4px; flex: 1; flex-wrap: wrap; }
+    .header-nav a { color: rgba(255,255,255,.8); font-size: .82rem; font-weight: 500; padding: 6px 10px; border-radius: 6px; transition: color .2s, background .2s; }
+    .header-nav a:hover { color: var(--white); background: rgba(255,255,255,.1); }
+    .header-nav .btn-add { margin-left: auto; background: var(--primary); color: var(--white) !important; padding: 8px 14px; border-radius: 8px; font-weight: 700; font-size: .82rem; }
+    .header-nav .btn-add:hover { background: var(--primary-dark) !important; }
+    .burger { display: none; cursor: pointer; color: var(--white); font-size: 1.4rem; margin-left: auto; }
+    .site-footer { background: var(--dark); color: rgba(255,255,255,.75); margin-top: 60px; }
+    .footer-inner { max-width: 1200px; margin: 0 auto; padding: 48px 20px 20px; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; }
+    .footer-brand .logo { font-size: 1.2rem; font-weight: 800; color: var(--white); margin-bottom: 10px; }
+    .footer-brand .logo b { color: var(--primary-light); }
+    .footer-brand p { font-size: .85rem; line-height: 1.6; }
+    .footer-socials { display: flex; gap: 12px; margin-top: 16px; }
+    .footer-socials a { width: 34px; height: 34px; border-radius: 50%; background: rgba(255,255,255,.1); display: grid; place-items: center; font-size: .9rem; }
+    .footer-socials a:hover { background: var(--primary); }
+    .footer-col h4 { color: var(--white); font-size: .8rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; margin-bottom: 14px; }
+    .footer-col a { display: block; font-size: .85rem; color: rgba(255,255,255,.65); padding: 3px 0; }
+    .footer-col a:hover { color: var(--primary-light); }
+    .footer-bottom { max-width: 1200px; margin: 0 auto; padding: 16px 20px; border-top: 1px solid rgba(255,255,255,.1); display: flex; justify-content: space-between; font-size: .78rem; color: rgba(255,255,255,.45); }
+    @media(max-width:900px) { .footer-inner { grid-template-columns: 1fr 1fr; } }
+    @media(max-width:640px) { .header-nav { display: none; flex-direction: column; position: absolute; top: 64px; left: 0; right: 0; background: var(--dark2); padding: 12px 20px 20px; gap: 4px; } .header-nav.open { display: flex; } .header-nav .btn-add { margin-left: 0; text-align: center; } .burger { display: block; } .footer-inner { grid-template-columns: 1fr; gap: 24px; } }
+
+    .post-hero { background: linear-gradient(135deg, var(--dark), var(--primary-dark)); color: var(--white); padding: 56px 20px; text-align: center; }
+    .post-hero .cat-label { font-size: .75rem; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: var(--primary-light); margin-bottom: 10px; }
+    .post-hero h1 { font-size: clamp(1.5rem,4vw,2.4rem); font-weight: 800; max-width: 700px; margin: 0 auto 12px; line-height: 1.2; }
+    .post-hero .meta { font-size: .85rem; opacity: .75; }
+    .post-body { max-width: 760px; margin: 48px auto 80px; padding: 0 20px; }
+    .post-body p { font-size: 1rem; line-height: 1.85; color: var(--text-muted); margin-bottom: 20px; }
+    .post-body h2 { font-size: 1.2rem; font-weight: 700; color: var(--text); margin: 32px 0 12px; }
+    .post-body a { color: var(--primary); }
+    .back-link { display: inline-block; color: var(--primary); font-weight: 600; font-size: .9rem; margin-bottom: 32px; }
+    .back-link:hover { text-decoration: underline; }
+    .post-footer { background: var(--primary-pale); border-radius: 12px; padding: 28px; margin-top: 40px; text-align: center; }
+    .post-footer h3 { font-size: 1rem; font-weight: 700; margin-bottom: 8px; }
+    .post-footer p { font-size: .88rem; color: var(--text-muted); margin-bottom: 16px; }
+    .btn-green { display: inline-block; background: var(--primary); color: var(--white); font-weight: 700; padding: 10px 24px; border-radius: 8px; font-size: .9rem; }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/index.html" class="site-logo"><span class="logo-icon">🍑</span><span><b>Butts County</b> Local</span></a>
+      <nav class="header-nav" id="mainNav">
+        <a href="/index.html">Directory</a>
+        <a href="/blog.html">Blog</a>
+        <a href="/events.html">Events</a>
+        <a href="/deals.html">Deals</a>
+        <a href="/march-2026-business-spotlight.html">Spotlight</a>
+        <a href="/about.html">About</a>
+        <a href="/contact.html">Contact</a>
+        <a href="/add-listing.html" class="btn-add">+ Free Listing</a>
+      </nav>
+      <button class="burger" onclick="document.getElementById('mainNav').classList.toggle('open')">☰</button>
+    </div>
+  </header>
+
+<div class="post-hero">
+  <div class="cat-label">Recreation</div>
+  <h1>Dauset Trails Nature Center — What to Expect on Your Visit</h1>
+  <div class="meta">April 14, 2026 &nbsp;·&nbsp; 5 min read</div>
+</div>
+<div class="post-body">
+  <a href="/blog.html" class="back-link">← Back to Blog</a>
+  <p>Dauset Trails Nature Center on Mount Vernon Road in Jackson is the kind of place that locals treasure and visitors discover with genuine delight. It's a 1,200-acre wildlife preserve operated by Butts County that manages to feel both completely wild and thoughtfully organized. And best of all, admission is completely free.</p>
+
+<h2>The Wildlife</h2>
+<p>The native animal exhibits are what set Dauset apart from a standard hiking trail. White-tailed deer, wild turkey, river otters, red foxes, great horned owls, black bears, and many other species native to Georgia live in large, naturalistic enclosures throughout the preserve. The up-close encounters with native wildlife — especially animals that are rarely seen in the wild — make Dauset a genuinely special experience for visitors of all ages.</p>
+
+<h2>The Trails</h2>
+<p>Seventeen miles of well-marked trails wind through the 1,200-acre property, ranging from easy flat loops to more challenging ridgeline routes. The trail system connects with Indian Springs State Park, making it possible to spend a full day hiking between the two properties. Bring water — there are limited facilities once you're on the trails.</p>
+
+<h2>Fishing Ponds</h2>
+<p>The preserve has several stocked fishing ponds accessible to visitors with a valid Georgia fishing license. Bass and bream are the primary species. It's a quieter, more intimate fishing experience than the larger lakes in the area.</p>
+
+<h2>Educational Programs</h2>
+<p>Dauset runs regular educational programs, school field trips, and seasonal events throughout the year. Scout troops, homeschool groups, and birthday parties frequently use the facility. Call ahead to inquire about group programs.</p>
+
+<h2>Visitor Info</h2>
+<p>Address: 360 Mt Vernon Church Rd, Jackson, GA 30233 · Phone: (770) 775-6798 · Hours: Tue–Sun 9am–5pm (closed Mondays) · Admission: Free</p>
+  <div class="post-footer">
+    <h3>🍑 Find Local Businesses in Butts County</h3>
+    <p>Browse the full directory of Jackson, GA businesses — restaurants, services, recreation, and more. All free.</p>
+    <a href="/index.html" class="btn-green">Browse the Directory →</a>
+  </div>
+</div>
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="logo">🍑 <b>Butts County</b> Local</div>
+        <p>The free local business directory for Butts County, GA. Connecting the community since 2025.</p>
+        <div class="footer-socials"><a href="#" title="Facebook">📘</a><a href="#" title="Instagram">📷</a><a href="#" title="X">🐦</a></div>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <a href="/index.html">Browse All</a>
+        <a href="/blog.html">Blog & Guides</a>
+        <a href="/events.html">Events Calendar</a>
+        <a href="/deals.html">Deals & Specials</a>
+        <a href="/march-2026-business-spotlight.html">Business Spotlight</a>
+      </div>
+      <div class="footer-col">
+        <h4>Business Owners</h4>
+        <a href="/add-listing.html">Add Free Listing</a>
+        <a href="/advertise.html">Advertise With Us</a>
+        <a href="/contact.html">Contact Us</a>
+        <a href="https://www.buttscounty.org" target="_blank">Butts County Gov</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="/about.html">About Us</a>
+        <a href="/privacy.html">Privacy Policy</a>
+        <a href="/terms.html">Terms of Service</a>
+        <a href="/new-to-jackson.html">New Resident Guide</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Butts County Local · Not affiliated with Butts County Government</span>
+      <span><a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a></span>
+    </div>
+  </footer>
+  <script>
+    document.addEventListener('click',function(e){
+      var nav=document.getElementById('mainNav'),burger=document.querySelector('.burger');
+      if(nav&&!nav.contains(e.target)&&burger&&!burger.contains(e.target))nav.classList.remove('open');
+    });
+  </script>
+</body>
+</html>

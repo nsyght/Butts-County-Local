@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#2D6A4F">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <title>Butts County Local — Butts County, GA Business Directory</title>
+  <meta name="description" content="Discover the best local businesses in Butts County, GA. Restaurants, shops, services, and more — all free to browse and list.">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Butts County Local",
+  "url": "https://buttscountylocal.com",
+  "description": "Free local business directory for Butts County, Georgia. Find restaurants, shops, services, and more in Jackson, GA.",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://buttscountylocal.com/index.html?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  },
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": [".speakable"]
+  }
+}
+  </script>
+  <style>
+
+    :root {
+      --primary: #2D6A4F;
+      --primary-dark: #1B4332;
+      --primary-light: #52B788;
+      --primary-pale: #E9F5EE;
+      --dark: #1A1A2E;
+      --dark2: #252540;
+      --white: #FFFFFF;
+      --gray-50: #FAFAFA;
+      --gray-100: #F5F5F5;
+      --gray-200: #E8E8E8;
+      --text: #1A1A2E;
+      --text-muted: #666;
+      --radius: 10px;
+      --shadow: 0 2px 12px rgba(0,0,0,.08);
+      --shadow-lg: 0 8px 32px rgba(0,0,0,.14);
+    }
+
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Inter', sans-serif; background: var(--gray-50); color: var(--text); }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+
+    /* ── HEADER ── */
+    .site-header {
+      background: var(--dark);
+      position: sticky; top: 0; z-index: 100;
+      box-shadow: 0 2px 8px rgba(0,0,0,.3);
+    }
+    .header-inner {
+      max-width: 1200px; margin: 0 auto;
+      padding: 0 20px;
+      display: flex; align-items: center; gap: 24px;
+      height: 64px;
+    }
+    .site-logo {
+      display: flex; align-items: center; gap: 10px;
+      font-size: 1.35rem; font-weight: 800; color: var(--white);
+      white-space: nowrap;
+    }
+    .site-logo .logo-icon { font-size: 1.5rem; }
+    .site-logo span b { color: var(--primary-light); }
+    .header-nav { display: flex; align-items: center; gap: 6px; flex: 1; }
+    .header-nav a {
+      color: rgba(255,255,255,.8); font-size: .875rem; font-weight: 500;
+      padding: 6px 12px; border-radius: 6px;
+      transition: color .2s, background .2s;
+    }
+    .header-nav a:hover { color: var(--white); background: rgba(255,255,255,.1); }
+    .header-nav .btn-add {
+      margin-left: auto;
+      background: var(--primary); color: var(--white) !important;
+      padding: 8px 16px; border-radius: 8px; font-weight: 700; font-size: .85rem;
+    }
+    .header-nav .btn-add:hover { background: var(--primary-dark) !important; }
+    .burger { display: none; cursor: pointer; color: var(--white); font-size: 1.4rem; margin-left: auto; }
+
+    /* ── FOOTER ── */
+    .site-footer { background: var(--dark); color: rgba(255,255,255,.75); margin-top: 60px; }
+    .footer-inner { max-width: 1200px; margin: 0 auto; padding: 48px 20px 20px; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; }
+    .footer-brand .logo { font-size: 1.2rem; font-weight: 800; color: var(--white); margin-bottom: 10px; }
+    .footer-brand .logo b { color: var(--primary-light); }
+    .footer-brand p { font-size: .85rem; line-height: 1.6; }
+    .footer-socials { display: flex; gap: 12px; margin-top: 16px; }
+    .footer-socials a { width: 34px; height: 34px; border-radius: 50%; background: rgba(255,255,255,.1); display: grid; place-items: center; font-size: .9rem; transition: background .2s; }
+    .footer-socials a:hover { background: var(--primary); }
+    .footer-col h4 { color: var(--white); font-size: .8rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; margin-bottom: 14px; }
+    .footer-col a { display: block; font-size: .85rem; color: rgba(255,255,255,.65); padding: 3px 0; transition: color .2s; }
+    .footer-col a:hover { color: var(--primary-light); }
+    .footer-bottom { max-width: 1200px; margin: 0 auto; padding: 16px 20px; border-top: 1px solid rgba(255,255,255,.1); display: flex; justify-content: space-between; align-items: center; font-size: .78rem; color: rgba(255,255,255,.45); }
+    .footer-bottom a:hover { color: var(--primary-light); }
+
+    /* ── RESPONSIVE ── */
+    @media(max-width:900px) {
+      .footer-inner { grid-template-columns: 1fr 1fr; }
+    }
+    @media(max-width:640px) {
+      .header-nav { display: none; flex-direction: column; position: absolute; top: 64px; left: 0; right: 0; background: var(--dark2); padding: 12px 20px 20px; gap: 4px; }
+      .header-nav.open { display: flex; }
+      .header-nav .btn-add { margin-left: 0; text-align: center; }
+      .burger { display: block; }
+      .footer-inner { grid-template-columns: 1fr; gap: 24px; }
+    }
+
+
+    /* HERO */
+    .hero {
+      background: linear-gradient(135deg, var(--dark) 0%, var(--primary-dark) 55%, var(--primary) 100%);
+      color: var(--white); text-align: center; padding: 64px 20px 80px;
+      position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content:'🍑';font-size:140px;opacity:.07;position:absolute;right:-20px;top:-10px;line-height:1;
+    }
+    .hero h1 { font-size: clamp(1.8rem,4vw,2.8rem); font-weight: 800; line-height: 1.2; margin-bottom: 12px; }
+    .hero h1 span { color: var(--primary-light); }
+    .hero p { font-size: 1.05rem; opacity: .88; margin-bottom: 32px; max-width: 520px; margin-inline: auto; }
+    .search-bar {
+      display: flex; max-width: 580px; margin: 0 auto;
+      background: var(--white); border-radius: 50px; overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,.2);
+    }
+    .search-bar input {
+      flex: 1; border: none; outline: none; padding: 14px 20px;
+      font-size: 1rem; font-family: inherit; color: var(--text);
+    }
+    .search-bar button {
+      background: var(--primary); color: var(--white); border: none;
+      padding: 14px 28px; font-size: 1rem; font-weight: 700; cursor: pointer;
+      transition: background .2s;
+    }
+    .search-bar button:hover { background: var(--primary-dark); }
+    .hero-stats { display: flex; justify-content: center; gap: 32px; margin-top: 32px; flex-wrap: wrap; }
+    .stat { text-align: center; }
+    .stat .num { font-size: 1.6rem; font-weight: 800; color: var(--primary-light); }
+    .stat .lbl { font-size: .78rem; opacity: .7; text-transform: uppercase; letter-spacing: .05em; }
+
+    /* CATEGORIES */
+    .section { max-width: 1200px; margin: 0 auto; padding: 48px 20px 0; }
+    .section-title { font-size: 1.4rem; font-weight: 800; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+    .section-title::after { content:''; flex:1; height:2px; background: var(--gray-200); }
+    .cat-grid { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 40px; }
+    .cat-pill {
+      padding: 10px 18px; border: 2px solid var(--gray-200); background: var(--white);
+      border-radius: 50px; font-size: .88rem; font-weight: 600; cursor: pointer;
+      transition: all .2s; font-family: inherit;
+    }
+    .cat-pill:hover, .cat-pill.active { border-color: var(--primary); background: var(--primary); color: var(--white); }
+    .cat-pill.all-pill { border-color: var(--primary); }
+
+    /* GRID */
+    .biz-grid { display: grid; grid-template-columns: repeat(auto-fill,minmax(320px,1fr)); gap: 20px; }
+    .biz-card {
+      background: var(--white); border-radius: var(--radius); box-shadow: var(--shadow);
+      display: flex; gap: 0; overflow: hidden; transition: transform .2s, box-shadow .2s;
+      border-top: 3px solid var(--primary); flex-direction: column;
+    }
+    .biz-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
+    .card-icon { font-size: 2rem; padding: 20px 20px 0; }
+    .card-body { padding: 12px 20px; flex: 1; }
+    .card-top { margin-bottom: 6px; }
+    .cat-badge { font-size: .72rem; font-weight: 700; padding: 3px 10px; border-radius: 20px; text-transform: uppercase; letter-spacing: .04em; }
+    .card-name { font-size: 1.05rem; font-weight: 700; margin: 6px 0 6px; }
+    .card-name a { color: var(--text); }
+    .card-name a:hover { color: var(--primary); }
+    .card-desc { font-size: .84rem; color: var(--text-muted); line-height: 1.5; margin-bottom: 10px; }
+    .card-meta { display: flex; flex-direction: column; gap: 3px; margin-bottom: 10px; }
+    .card-addr, .card-phone { font-size: .8rem; color: var(--text-muted); }
+    .card-addr { color: var(--primary); font-weight: 500; }
+    .card-tags { display: flex; flex-wrap: wrap; gap: 5px; }
+    .tag { background: var(--primary-pale); color: var(--primary-dark); font-size: .72rem; padding: 3px 8px; border-radius: 20px; font-weight: 600; }
+    .card-cta {
+      display: block; text-align: center; padding: 10px;
+      background: var(--gray-50); color: var(--primary); font-weight: 700; font-size: .85rem;
+      border-top: 1px solid var(--gray-200); transition: background .2s;
+    }
+    .card-cta:hover { background: var(--primary); color: var(--white); }
+
+    /* COUNT */
+    #listCount { font-size: .88rem; color: var(--text-muted); margin-bottom: 16px; font-weight: 500; }
+    #noResults { display:none; text-align:center; padding:60px 20px; color:var(--text-muted); }
+    #noResults p { font-size:1.1rem; margin-top:10px; }
+
+    /* CTA BAND */
+    .cta-band {
+      background: linear-gradient(90deg, var(--primary-dark), var(--primary));
+      color: var(--white); text-align: center; padding: 48px 20px; margin-top: 60px;
+    }
+    .cta-band h2 { font-size: 1.6rem; font-weight: 800; margin-bottom: 10px; }
+    .cta-band p { opacity: .9; margin-bottom: 24px; }
+    .btn-white {
+      display: inline-block; background: var(--white); color: var(--primary);
+      font-weight: 800; padding: 12px 32px; border-radius: 50px; font-size: 1rem;
+      transition: transform .2s, box-shadow .2s;
+    }
+    .btn-white:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,.2); }
+
+
+    /* FEATURED CARD */
+    .biz-card.featured {
+      border-top: 3px solid #f59e0b;
+      box-shadow: 0 4px 20px rgba(245,158,11,.18);
+      position: relative;
+    }
+    .featured-badge {
+      position: absolute; top: 12px; right: 12px;
+      background: linear-gradient(90deg,#f59e0b,#d97706);
+      color: #fff; font-size: .68rem; font-weight: 800;
+      padding: 3px 10px; border-radius: 20px; text-transform: uppercase; letter-spacing: .05em;
+    }
+    .biz-card.featured .card-cta { background: #fffbeb; color: #b45309; border-top-color: #fde68a; }
+    .biz-card.featured .card-cta:hover { background: #d97706; color: #fff; }
+
+    @media(max-width:600px){
+      .hero { padding: 40px 16px 60px; }
+      .biz-grid { grid-template-columns: 1fr; }
+    }
+
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/index.html" class="site-logo">
+        <span class="logo-icon">🍑</span>
+        <span><b>Butts County</b> Local</span>
+      </a>
+      <nav class="header-nav" id="mainNav">
+        <a href="/index.html">Directory</a>
+        <a href="/blog.html">Blog</a>
+        <a href="/events.html">Events</a>
+        <a href="/deals.html">Deals</a>
+        <a href="/march-2026-business-spotlight.html">Spotlight</a>
+        <a href="/about.html">About</a>
+        <a href="/contact.html">Contact</a>
+        <a href="/add-listing.html" class="btn-add">+ Free Listing</a>
+      </nav>
+      <button class="burger" onclick="document.getElementById('mainNav').classList.toggle('open')">☰</button>
+    </div>
+  </header>
+
+<section class="hero">
+  <h1 class="speakable">Find the Best of <span>Butts County, GA</span> 🍑</h1>
+  <p class="speakable">Your free local business directory — restaurants, services, shops, parks, and more in Jackson and throughout Butts County, Georgia.</p>
+  <div class="search-bar">
+    <input type="text" id="searchInput" placeholder="Search businesses…" autocomplete="off">
+    <button onclick="doSearch()">Search</button>
+  </div>
+  <div class="hero-stats">
+    <div class="stat"><div class="num">21+</div><div class="lbl">Businesses</div></div>
+    <div class="stat"><div class="num">10</div><div class="lbl">Categories</div></div>
+    <div class="stat"><div class="num">Free</div><div class="lbl">Always Free</div></div>
+  </div>
+</section>
+
+<main class="section" id="categories">
+  <div class="section-title">Browse by Category</div>
+  <div class="cat-grid">
+    <button class="cat-pill all-pill active" data-cat="all">🏙️ All Businesses</button><button class="cat-pill" data-cat="Auto & Repair">🔧 Auto & Repair</button><button class="cat-pill" data-cat="Beauty & Salon">✂️ Beauty & Salon</button><button class="cat-pill" data-cat="Community">🏛️ Community</button><button class="cat-pill" data-cat="Fitness">💪 Fitness</button><button class="cat-pill" data-cat="Food & Dining">🍽️ Food & Dining</button><button class="cat-pill" data-cat="Health & Medical">🏥 Health & Medical</button><button class="cat-pill" data-cat="Construction">🏗️ Construction</button>
+    <button class="cat-pill" data-cat="Home Services">🏠 Home Services</button><button class="cat-pill" data-cat="Pet Care">🐾 Pet Care</button><button class="cat-pill" data-cat="Recreation">🌲 Recreation</button><button class="cat-pill" data-cat="Retail">🛒 Retail</button>
+  </div>
+
+  <div id="listCount">Showing 21 businesses</div>
+  <div class="biz-grid" id="bizGrid">
+    <article class="biz-card featured" data-cat="Construction" data-name="the dumpster co." style="position:relative;">
+      <div class="featured-badge">⭐ Featured</div>
+      <div style="height:160px;overflow:hidden;"><img src="https://lh3.googleusercontent.com/places/ANXAkqEJR8fYqDumhYl768Cqz1ladPxIAq5JfNlY67ENfhinG_JNqv6mJIZStCmHevZ2rOZuIml5FwBs6XN5X4o7uwFeeryvJPmsUuM=s4800-w600-h400" alt="The Dumpster Co." style="width:100%;height:100%;object-fit:cover;display:block;" referrerpolicy="no-referrer"></div>
+      <div class="card-body">
+        <div class="card-top">
+          <span class="cat-badge" style="background:#78350f15;color:#92400e">Construction</span>
+        </div>
+        <h3 class="card-name">
+          <a href="/businesses/the-dumpster-co.html">The Dumpster Co.</a>
+        </h3>
+        <p class="card-desc">Jackson's local dumpster rental service. Roll-off containers for cleanouts, renovation, roofing, and construction — fast delivery, fair pricing.</p>
+        <div class="card-meta">
+          <span class="card-addr">📍 10 3rd St Suite 201, Jackson, GA 30233</span>
+          <span class="card-phone">📞 (678) 306-9993</span>
+        </div>
+        <div class="card-tags">
+          <span class="tag">Roll-Off Dumpsters</span>
+          <span class="tag">Residential</span>
+          <span class="tag">Construction</span>
+        </div>
+      </div>
+      <a href="/businesses/the-dumpster-co.html" class="card-cta">View Details →</a>
+    </article>
+    <article class="biz-card" data-cat="Food & Dining" data-name="southern star diner">
+      <div style="height:160px;overflow:hidden;"><img src="/images/hunters-cafe.webp" alt="Hunter's Cafe — Southern soul food in Jackson, GA" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+      <div class="card-body">
+        <div class="card-top">
+          <span class="cat-badge" style="background:#e74c3c15;color:#e74c3c">Food & Dining</span>
+        </div>
+        <h3 class="card-name">
+          <a href="/businesses/southern-star-diner.html">Hunter's Cafe</a>
+        </h3>
+        <p class="card-desc">Jackson's beloved home-style diner serving classic Southern breakfast and lunch since 1987. Famous for scratch biscuits,…</p>
+        <div class="card-meta">
+          <span class="card-addr">📍 310 Macon Ave, Jackson, GA 30233</span>
+          <span class="card-phone">📞 (770) 504-9111</span>
+        </div>
+        <div class="card-tags"><span class="tag">Breakfast</span><span class="tag">Southern</span><span class="tag">Dine-In</span></div>
+      </div>
+      <a href="/businesses/southern-star-diner.html" class="card-cta">View Details →</a>
+    </article>
+    <article class="biz-card" data-cat="Food & Dining" data-name="jackson bbq & smokehouse">
+      <div style="height:160px;overflow:hidden;"><img src="https://lh3.googleusercontent.com/places/ANXAkqGeiiExDe882BhrMWYmVynR4BHGTE5Dw8LJYcxKZgslktO-1BnqEK0LsbeawAEBeLvyeqEvYBWk3DfPGJzZE_nSiXgyVyqdCyc=s4800-w600-h400" alt="Fresh Air Barbecue" style="width:100%;height:100%;object-fit:cover;display:block;" referrerpolicy="no-referrer"></div>
+      <div class="card-body">
+        <div class="card-top">
+          <span class="cat-badge" style="background:#e74c3c15;color:#e74c3c">Food & Dining</span>
+        </div>
+        <h3 class="card-name">
+          <a href="/businesses/jackson-bbq-smokehouse.html">Fresh Air Barbecue</a>
+        </h3>
+        <p class="card-desc">Authentic Georgia BBQ slow-smoked over hickory wood. Pulled pork, ribs, smoked chicken, and all the Southern sides you c…</p>
+        <div class="card-meta">
+          <span class="card-addr">📍 1164 GA-42, Jackson, GA 30233</span>
+          <span class="card-phone">📞 (770) 775-3182</span>
+        </div>
+        <div class="card-tags"><span class="tag">BBQ</span><span class="tag">Takeout</span><span class="tag">Catering</span></div>
+      </div>
+      <a href="/businesses/jackson-bbq-smokehouse.html" class="card-cta">View Details →</a>
+    </article>
+    <article class="biz-card" data-cat="Food & Dining" data-name="peach tree café">
+      <div style="height:160px;overflow:hidden;"><img src="https://lh3.googleusercontent.com/place-photos/AJRVUZOwnirshoJ3fcyAWtbkuRYAppRA9m5hHGPJxfO3ETV4P0oPbPls5s_uC_p7KR4Jikh4ugmLwlh8zvZ3aLRD1_kdne5Hk6X9tQK2h6x2EcKCsprWPzBjirhi8VF9aAl-4Oh4daaIdkjlTWFKfQ=s4800-w600-h400" alt="Lucy Lu's Coffee Cafe" style="width:100%;height:100%;object-fit:cover;display:block;" referrerpolicy="no-referrer"></div>
+      <div class="card-body">
+        <div class="card-top">
+          <span class="cat-badge" style="background:#e74c3c15;color:#e74c3c">Food & Dining</span>
+        </div>
+        <h3 class="card-name">
+          <a href="/businesses/peach-tree-cafe.html">Lucy Lu's Coffee Cafe</a>
+        </h3>
+        <p class="card-desc">A cozy coffee shop and café in downtown Jackson serving espresso drinks, fresh-baked pastries, and light lunch fare in a…</p>
+        <div class="card-meta">
+          <span class="card-addr">📍 42 N Mulberry St, Jackson, GA 30233</span>
+          <span class="card-phone">📞 (470) 251-5262</span>
+        </div>
+        <div class="card-tags"><span class="tag">Coffee</span><span class="tag">Café</span><span class="tag">Pastries</span></div>
+      </div>
+      <a href="/businesses/peach-tree-cafe.html" class="card-cta">View Details →</a>
+    </article>
+    <article class="biz-card" data-cat="Food & Dining" data-name="el rancho mexican restaurant">
+      <div style="height:160px;overflow:hidden;"><img src="https://lh3.googleusercontent.com/place-photos/AJRVUZMByvZwIBulFrklKAgO6s7r4dm576Kca5J7a2rVIv0TNFMATiX55mFR6IFqlKYuULPqH5AKUiGS60ylQ-6hvUSgL4ojT84kvvtmgVImke4mOW1-6JBhuFWMkQjGtThXHNjstulIQ35_Xy43XQ=s4800-w600-h400" alt="Mesquite Mexican Grill" style="width:100%;height:100%;object-fit:cover;display:block;" referrerpolicy="no-referrer"></div>
+      <div class="card-body">
+        <div class="card-top">
+          <span class="cat-badge" style="background:#e74c3c15;color:#e74c3c">Food & Dining</span>
+        </div>
+        <h3 class="card-name">
+          <a href="/businesses/el-rancho-mexican.html">Mesquite Mexican Grill</a>
+        </h3>
+        <p class="card-desc">Family-owned Mexican restaurant with freshly made tortillas, sizzling fajitas, hearty combination plates, and the best m…</p>
+        <div class="card-meta">
+          <span class="card-addr">📍 34 3rd St, Jackson, GA 30233</span>
+          <span class="card-phone">📞 (678) 752-0013</span>
+        </div>
+        <div class="card-tags"><span class="tag">Mexican</span><span class="tag">Margaritas</span><span class="tag">Family Friendly</span></div>
+      </div>
+      <a href="/businesses/el-rancho-mexican.html" class="card-cta">View Details →</a>
+    </article>
+    <article class="biz-card" data-cat="Health & Medical" data-name="butts county family health center">
+      <div style="height:160px;overflow:hidden;"><img src="https://lh3.googleusercontent.com/place-photos/AJRVUZMKy_yqsSGlPSHmcnQe-EMby5vmpznQiwrmgLhAV9e1wOJ24WujZWKEztTkQydL071j1-IJHAVnCa9j03L6n7FKW9kr4yBPz86LiqLCIbC16SfLMsTG01WLx6A82HEhcfldohV6UdXpfgpIplfQDQW2_Q=s4800-w600-h400" alt="Family Health Clinic" style="width:100%;height:100%;object-fit:cover;display:block;" referrerpolicy="no-referrer"></div>
+      <div class="card-body">
+        <div class="card-top">
+          <span class="cat-badge" style="background:#2ecc7115;color:#2ecc71">Health & Medical</span>
+        </div>
+        <h3 class="card-name">
+          <a href="/businesses/butts-county-family-health.html">Family Health Clinic</a>
+        </h3>
+        <p class="card-desc">Comprehensive primary care for the whole family — from pediatrics to senior care. Accepting new patients, most insurance…</p>
+        <div class="card-meta">
+          <span class="card-addr">📍 1631 GA-20, McDonough, GA 30253</span>
+          <span class="card-phone">📞 (770) 288-2822</span>
+        </div>
+        <div class="card-tags"><span class="tag">Primary Care</span><span class="tag">Pediatrics</span><span class="tag">Sliding Scale</span></div>
+      </div>
+      <a href="/businesses/butts-county-family-health.html" class="card-cta">View Details →</a>
+    </article>
+    <article class="biz-card" data-cat="Health & Medical" data-name="jackson dental associates">
+      <div style="height:160px;overflow:hidden;"><img src="https://lh3.googleusercontent.com/place-photos/AJRVUZOUxlQWZopXJcj9uHBS3tSq3CD40LV24elavBhkOcBxgHITAdXFBFtJ1pj2QeKa9v1yQpw29A4VFumYI3A9vOsHAVewECSz6S4tf2jKfPxHSd-eI3Mh9tXgFdFL9sC9gUMcA2LsCpA0cX_4zN8=s4800-w600-h400" alt="Bhat Dental Associates" style="width:100%;height:100%;object-fit:cover;display:block;" referrerpolicy="no-referrer"></div>
+      <div class="card-body">
+        <div class="card-top">
+          <span class="cat-badge" style="background:#2ecc7115;color:#2ecc71">Health & Medical</span>
+        </div>
+        <h3 class="card-name">
+          <a href="/businesses/jackson-dental-associates.html">Bhat Dental Associates</a>
+        </h3>
+        <p class="card-desc">Full-service dental practice offering cleanings, restorations, cosmetic dentistry, and orthodontics for patients of all …</p>
+        <div class="card-meta">
+          <span class="card-addr">📍 316 W 3rd St #1913, Jackson, GA 30233</span>
+          <span class="card-phone">📞 (770) 775-0088</span>
+        </div>
+        <div class="card-tags"><span class="tag">Dentist</span><span class="tag">Cosmetic</span><span class="tag">Orthodontics</span></div>
+      </div>
+      <a href="/businesses/jackson-dental-associates.html" class="card-cta">View Details →</a>
+    </article>
+    <article class="biz-card" data-cat="Health & Medical" data-name="jackson urgent care">
+      <div style="height:160px;overflow:hidden;"><img src="https://lh3.googleusercontent.com/places/ANXAkqEURG0OgkRk3rImaW6anByH_JrfDezSUzJLJXLHays2MOaYxS-E6Mx8aYQrQ58yN5MB33OwrlbKf6yOhkwvZe9WlmsL7tYrV2M=s4800-w480-h270" alt="Aylo Health - Primary Care at Jackson" style="width:100%;height:100%;object-fit:cover;display:block;" referrerpolicy="no-referrer"></div>
+      <div class="card-body">
+        <div class="card-top">
+          <span class="cat-badge" style="background:#2ecc7115;color:#2ecc71">Health & Medical</span>
+        </div>
+        <h3 class="card-name">
+          <a href="/businesses/jackson-urgent-care.html">Aylo Health - Primary Care at Jackson</a>
+        </h3>
+        <p class="card-desc">Walk-in urgent care clinic serving Butts County with on-site X-rays, lab work, and treatment for non-life-threatening il…</p>
+        <div class="card-meta">
+          <span class="card-addr">📍 1502 W 3rd St, Jackson, GA 30233</span>
+          <span class="card-phone">📞 (770) 268-4011</span>
+        </div>
+        <div class="card-tags"><span class="tag">Walk-In</span><span class="tag">X-Ray</span><span class="tag">No Appointment</span></div>
+      </div>
+      <a href="/businesses/jackson-urgent-care.html" class="card-cta">View Details →</a>
+    </article>
+    <article class="biz-card" data-cat="Auto & Repair" data-name="jackson auto & tire">
+      <div style="height:160px;overflow:hidden;"><img src="https://lh3.googleusercontent.com/place-photos/AJRVUZOfhJSpFCYlPKhudVQPjTGuG4t3_EWypHdDLmLoE7oxyCCAXtnjNd14TgJEVCT8qeuq-vziLyu6Kmc07_aJxWpPSW-pHquoiFy1PogXraj2jgckPuEuZxY3RJaCfLzlIiRlAJZ7iUVuexmaRw=s4800-w600-h400" alt="Chuck's Tire & Auto Repair" style="width:100%;height:100%;object-fit:cover;display:block;" referrerpolicy="no-referrer"></div>
+      <div class="card-body">
+        <div class="card-top">
+          <span class="cat-badge" style="background:#3498db15;color:#3498db">Auto & Repair</span>
+        </div>
+        <h3 class="card-name">
+          <a href="/businesses/jackson-auto-tire.html">Chuck's Tire & Auto Repair</a>
+        </h3>
+        <p class="card-desc">Full-service auto repair and tire shop serving Butts County. ASE-certified technicians, honest pricing, and same-day ser…</p>
+        <div class="card-meta">
+          <span class="card-addr">📍 780 E 3rd St, Jackson, GA 30233</span>
+          <span class="card-phone">📞 (770) 504-8525</span>
+        </div>
+        <div class="card-tags"><span class="tag">Auto Repair</span><span class="tag">Tires</span><span class="tag">ASE-Certified</span></div>
+      </div>
+      <a href="/businesses/jackson-auto-tire.html" class="card-cta">View Details →</a>
+    </article>
+    <article class="biz-card" data-cat="Auto & Repair" data-name="butts county collision center">
+      <div style="height:160px;overflow:hidden;"><img src="https://lh3.googleusercontent.com/places/ANXAkqH4yQyEUrmxQ3IBLdR3QONJBXNPJadaR0wSsU6DXZ4XX3Y4-MNXWnYcdNudFivzu1vxrITarhKSYg12nYWFTJE8sUWMzxbbuQI=s4800-w600-h315" alt="Jackson Collision Center" style="width:100%;height:100%;object-fit:cover;display:block;" referrerpolicy="no-referrer"></div>
+      <div class="card-body">
+        <div class="card-top">
+          <span class="cat-badge" style="background:#3498db15;color:#3498db">Auto & Repair</span>
+        </div>
+        <h3 class="card-name">
+          <a href="/businesses/butts-county-collision.html">Jackson Collision Center</a>
+        </h3>
+        <p class="card-desc">Expert auto body repair and collision restoration. Works with all major insurance carriers. Lifetime warranty on all bod…</p>
+        <div class="card-meta">
+          <span class="card-addr">📍 226 Mitchell St, Jackson, GA 30233</span>
+          <span class="card-phone">📞 (770) 775-1400</span>
+        </div>
+        <div class="card-tags"><span class="tag">Body Shop</span><span class="tag">Collision</span><span class="tag">Insurance</span></div>
+      </div>
+      <a href="/businesses/butts-county-collision.html" class="card-cta">View Details →</a>
+    </article>
+    <article class="biz-card" data-cat="Beauty & Salon" data-name="magnolia hair studio">
+      <div style="height:160px;overflow:hidden;"><img src="https://lh3.googleusercontent.com/places/ANXAkqH_bav10D6atTeJAVvYsYNiTpNJdKOlVZEGkZrJXC4SczTElTF8quTsMmBn58vCDiIYk6TpkzOuDv6od4sHdDHESlDXjNS0h1Q=s4800-w600-h400" alt="Texture Salon & Boutique" style="width:100%;height:100%;object-fit:cover;display:block;" referrerpolicy="no-referrer"></div>
+      <div class="card-body">
+        <div class="card-top">
+          <span class="cat-badge" style="background:#9b59b615;color:#9b59b6">Beauty & Salon</span>
+        </div>
+        <h3 class="card-name">
+          <a href="/businesses/magnolia-hair-studio.html">Texture Salon & Boutique</a>
+        </h3>
+        <p class="card-desc">Full-service hair salon in Jackson offering cuts, color, highlights, keratin treatments, and special occasion styling. W…</p>
+        <div class="card-meta">
+          <span class="card-addr">📍 326 W 2nd St, Jackson, GA 30233</span>
+          <span class="card-phone">📞 (770) 504-9033</span>
+        </div>
+        <div class="card-tags"><span class="tag">Hair Color</span><span class="tag">Cuts</span><span class="tag">Styling</span></div>
+      </div>
+      <a href="/businesses/magnolia-hair-studio.html" class="card-cta">View Details →</a>
+    </article>
+    <article class="biz-card" data-cat="Beauty & Salon" data-name="jackson nail & spa">
+      <div style="height:160px;overflow:hidden;"><img src="https://lh3.googleusercontent.com/places/ANXAkqGvGyofeW2W-oMwt6KurY7NMPD4XC03jlpsIGPB0ypQsJCvhMux6MUTtpf1ZZVM2q1Ytv__g-QzzVh6ig9XfmxJbItPmVKKkpc=s4800-w600-h400" alt="Sun Nails Salon" style="width:100%;height:100%;object-fit:cover;display:block;" referrerpolicy="no-referrer"></div>
+      <div class="card-body">
+        <div class="card-top">
+          <span class="cat-badge" style="background:#9b59b615;color:#9b59b6">Beauty & Salon</span>
+        </div>
+        <h3 class="card-name">
+          <a href="/businesses/jackson-nail-spa.html">Sun Nails Salon</a>
+        </h3>
+        <p class="card-desc">Full-service nail salon offering manicures, pedicures, gel, acrylics, nail art, and waxing in a clean, relaxing environm…</p>
+        <div class="card-meta">
+          <span class="card-addr">📍 791 Hwy 36 E Suite B, Jackson, GA 30233</span>
+          <span class="card-phone">📞 (770) 775-7022</span>
+        </div>
+        <div class="card-tags"><span class="tag">Nails</span><span class="tag">Pedicure</span><span class="tag">Waxing</span></div>
+      </div>
+      <a href="/businesses/jackson-nail-spa.html" class="card-cta">View Details →</a>
+    </article>
+    <article class="biz-card" data-cat="Fitness" data-name="jackson family fitness">
+      <div style="height:160px;overflow:hidden;"><img src="https://lh3.googleusercontent.com/place-photos/AJRVUZNFnonh3Gn6lA-Tlr5F14Wj6zz-WGJlbPiTMjuk5uX2LwWdpuJRZ4qi79LTNyr7oM4lBORPffrxfzHbrmRIwBv4UvEwJIijhwNwWk9yP6f47co4w9u9nrmkM1goFwYZCMqzp4SIT9r0ijzX8g=s4800-w600-h400" alt="Health Fitness USA" style="width:100%;height:100%;object-fit:cover;display:block;" referrerpolicy="no-referrer"></div>
+      <div class="card-body">
+        <div class="card-top">
+          <span class="cat-badge" style="background:#e67e2215;color:#e67e22">Fitness</span>
+        </div>
+        <h3 class="card-name">
+          <a href="/businesses/jackson-family-fitness.html">Health Fitness USA</a>
+        </h3>
+        <p class="card-desc">Affordable family gym with cardio equipment, free weights, group fitness classes, and a supervised kids' area. Serving B…</p>
+        <div class="card-meta">
+          <span class="card-addr">📍 791 Hwy 36 E Suite A, Jackson, GA 30233</span>
+          <span class="card-phone">📞 (678) 752-0030</span>
+        </div>
+        <div class="card-tags"><span class="tag">Gym</span><span class="tag">Classes</span><span class="tag">Family</span></div>
+      </div>
+      <a href="/businesses/jackson-family-fitness.html" class="card-cta">View Details →</a>
+    </article>
+    <article class="biz-card" data-cat="Recreation" data-name="indian springs state park">
+      <div style="height:160px;overflow:hidden;"><img src="https://lh3.googleusercontent.com/place-photos/AJRVUZOHfRtrLZCc0tSQW84GlBCM2Mo8w47kzIDHD1wI3rbAcxL5TSt2eWAl3RmVZczVoJy9FWNkikAVOZj9_memHpdH1SXt_43CJXmXiI1oa0F1pidvvNJElQut9JQ8O8Fyxh0km93UN9JG7mt3OSk=s4800-w600-h400" alt="Indian Springs State Park" style="width:100%;height:100%;object-fit:cover;display:block;" referrerpolicy="no-referrer"></div>
+      <div class="card-body">
+        <div class="card-top">
+          <span class="cat-badge" style="background:#27ae6015;color:#27ae60">Recreation</span>
+        </div>
+        <h3 class="card-name">
+          <a href="/businesses/indian-springs-state-park.html">Indian Springs State Park</a>
+        </h3>
+        <p class="card-desc">One of the oldest state parks in the United States, featuring natural mineral springs, a lake, cottages, camping, fishin…</p>
+        <div class="card-meta">
+          <span class="card-addr">📍 678 Lake Clark Rd, Flovilla, GA 30216</span>
+          <span class="card-phone">📞 (770) 504-2277</span>
+        </div>
+        <div class="card-tags"><span class="tag">State Park</span><span class="tag">Camping</span><span class="tag">Fishing</span><span class="tag">Historic</span></div>
+      </div>
+      <a href="/businesses/indian-springs-state-park.html" class="card-cta">View Details →</a>
+    </article>
+    <article class="biz-card" data-cat="Recreation" data-name="dauset trails nature center">
+      <div style="height:160px;overflow:hidden;"><img src="https://lh3.googleusercontent.com/places/ANXAkqGd11oIygRR79RVVQCsJgbPszs06d4I2l91fnGzW2bHp6U3_cwtL3yngVkTGHsI8V5N0YdXMP9yovmPTMnXgzjNY2O_NYQOIY0=s4800-w600-h400" alt="Dauset Trails Nature Center" style="width:100%;height:100%;object-fit:cover;display:block;" referrerpolicy="no-referrer"></div>
+      <div class="card-body">
+        <div class="card-top">
+          <span class="cat-badge" style="background:#27ae6015;color:#27ae60">Recreation</span>
+        </div>
+        <h3 class="card-name">
+          <a href="/businesses/dauset-trails.html">Dauset Trails Nature Center</a>
+        </h3>
+        <p class="card-desc">A wildlife preserve and nature center featuring native Georgia animals, 17 miles of trails, fishing ponds, and education…</p>
+        <div class="card-meta">
+          <span class="card-addr">📍 360 Mt Vernon Church Rd, Jackson, GA 30233</span>
+          <span class="card-phone">📞 (770) 775-6798</span>
+        </div>
+        <div class="card-tags"><span class="tag">Wildlife</span><span class="tag">Hiking</span><span class="tag">Free Admission</span></div>
+      </div>
+      <a href="/businesses/dauset-trails.html" class="card-cta">View Details →</a>
+    </article>
+    <article class="biz-card" data-cat="Recreation" data-name="high falls state park">
+      <div style="height:160px;overflow:hidden;"><img src="https://lh3.googleusercontent.com/place-photos/AJRVUZNvbmLg2YfHhppw405gDAvdIcpXbiICIYY-M-XI_HeO4GEEndoFGrrzq-eyQLuv8EDMJW_pnYDmE4TGfOKh2AIuz_914LI3ZXB12gbR6Z8NdAx-lqKQUQ7Yv1xaqoIZDs-r22gqWgpsUh1QC-U=s4800-w600-h400" alt="High Falls State Park" style="width:100%;height:100%;object-fit:cover;display:block;" referrerpolicy="no-referrer"></div>
+      <div class="card-body">
+        <div class="card-top">
+          <span class="cat-badge" style="background:#27ae6015;color:#27ae60">Recreation</span>
+        </div>
+        <h3 class="card-name">
+          <a href="/businesses/high-falls-state-park.html">High Falls State Park</a>
+        </h3>
+        <p class="card-desc">Stunning waterfall park on the Towaliga River. A short drive from Jackson with camping, fishing, swimming pool, and beau…</p>
+        <div class="card-meta">
+          <span class="card-addr">📍 76 High Falls Park Dr, Jackson, GA 30233</span>
+          <span class="card-phone">📞 (478) 993-3053</span>
+        </div>
+        <div class="card-tags"><span class="tag">Waterfall</span><span class="tag">Camping</span><span class="tag">Fishing</span></div>
+      </div>
+      <a href="/businesses/high-falls-state-park.html" class="card-cta">View Details →</a>
+    </article>
+    <article class="biz-card" data-cat="Community" data-name="butts county public library">
+      <div style="height:160px;overflow:hidden;"><img src="https://lh3.googleusercontent.com/place-photos/AJRVUZNnQfcC3PW9E-iaedAxDVR3YvKra1JCU006wwimlav9mzu0aRUKtJXxOSfGOnwRo-5Jx_70Uz3aFpQHIFBoqN8-YpcNY2GIzsyEETqe4_qPqms9XASKq6ndqI3A3_TnQwnVHq6aHsuEJu1b=s4800-w600-h400" alt="Jackson-Butts County Library" style="width:100%;height:100%;object-fit:cover;display:block;" referrerpolicy="no-referrer"></div>
+      <div class="card-body">
+        <div class="card-top">
+          <span class="cat-badge" style="background:#34495e15;color:#34495e">Community</span>
+        </div>
+        <h3 class="card-name">
+          <a href="/businesses/butts-county-library.html">Jackson-Butts County Library</a>
+        </h3>
+        <p class="card-desc">Your community library offering books, digital resources, Wi-Fi, children's programs, and free access to computers and r…</p>
+        <div class="card-meta">
+          <span class="card-addr">📍 436 E College St, Jackson, GA 30233</span>
+          <span class="card-phone">📞 (770) 775-7524</span>
+        </div>
+        <div class="card-tags"><span class="tag">Library</span><span class="tag">Free</span><span class="tag">Community</span></div>
+      </div>
+      <a href="/businesses/butts-county-library.html" class="card-cta">View Details →</a>
+    </article>
+    <article class="biz-card" data-cat="Community" data-name="butts county school system">
+      <div class="card-icon">🏫</div>
+      <div class="card-body">
+        <div class="card-top">
+          <span class="cat-badge" style="background:#34495e15;color:#34495e">Community</span>
+        </div>
+        <h3 class="card-name">
+          <a href="/businesses/butts-county-schools.html">Butts County School System</a>
+        </h3>
+        <p class="card-desc">Butts County School System serves K–12 students with five schools, dedicated teachers, and a full range of academic and …</p>
+        <div class="card-meta">
+          <span class="card-addr">📍 186 N Mulberry St, Jackson, GA 30233</span>
+          <span class="card-phone">📞 (770) 775-8000</span>
+        </div>
+        <div class="card-tags"><span class="tag">Schools</span><span class="tag">K-12</span><span class="tag">Education</span></div>
+      </div>
+      <a href="/businesses/butts-county-schools.html" class="card-cta">View Details →</a>
+    </article>
+    <article class="biz-card" data-cat="Home Services" data-name="georgia green lawn & landscape">
+      <div style="height:160px;overflow:hidden;"><img src="https://lh3.googleusercontent.com/places/ANXAkqHfl4xSK9dTlRHXiWoDBcZGhdCMAzQcPODLRxOnG3fsIg-qgdXJY8GIoS0DrPDEacgd7pnPBUaKJSGQsFwu6PYAP0qzrkM12ZU=s4800-w600-h400" alt="JC&M Landscaping & Maintenance LLC" style="width:100%;height:100%;object-fit:cover;display:block;" referrerpolicy="no-referrer"></div>
+      <div class="card-body">
+        <div class="card-top">
+          <span class="cat-badge" style="background:#f39c1215;color:#f39c12">Home Services</span>
+        </div>
+        <h3 class="card-name">
+          <a href="/businesses/georgia-green-lawn.html">JC&M Landscaping & Maintenance LLC</a>
+        </h3>
+        <p class="card-desc">Locally owned lawn care, landscaping, irrigation, and shrub trimming services for residential and commercial properties …</p>
+        <div class="card-meta">
+          <span class="card-addr">📍 182 Woodlands Dr, Jackson, GA 30233</span>
+          <span class="card-phone">📞 (470) 541-0590</span>
+        </div>
+        <div class="card-tags"><span class="tag">Lawn Care</span><span class="tag">Landscaping</span><span class="tag">Irrigation</span></div>
+      </div>
+      <a href="/businesses/georgia-green-lawn.html" class="card-cta">View Details →</a>
+    </article>
+    <article class="biz-card" data-cat="Pet Care" data-name="jackson animal clinic">
+      <div style="height:160px;overflow:hidden;"><img src="https://lh3.googleusercontent.com/places/ANXAkqEZKLAtkgpVQ_FtZzHQyp8Vqc86prrfiWQO3T86x83t-8ffquEVse8xL8cjsYmhy4_RoN2QpEbRf3fb2Ojns-W8BRzZb0V6fm0=s4800-w600-h400" alt="Jackson Veterinary Clinic" style="width:100%;height:100%;object-fit:cover;display:block;" referrerpolicy="no-referrer"></div>
+      <div class="card-body">
+        <div class="card-top">
+          <span class="cat-badge" style="background:#79554815;color:#795548">Pet Care</span>
+        </div>
+        <h3 class="card-name">
+          <a href="/businesses/jackson-animal-clinic.html">Jackson Veterinary Clinic</a>
+        </h3>
+        <p class="card-desc">Full-service veterinary care for dogs, cats, and small animals. Wellness exams, vaccinations, surgery, dentistry, and bo…</p>
+        <div class="card-meta">
+          <span class="card-addr">📍 369 E 2nd St, Jackson, GA 30233</span>
+          <span class="card-phone">📞 (770) 775-5710</span>
+        </div>
+        <div class="card-tags"><span class="tag">Veterinarian</span><span class="tag">Dogs</span><span class="tag">Cats</span><span class="tag">Boarding</span></div>
+      </div>
+      <a href="/businesses/jackson-animal-clinic.html" class="card-cta">View Details →</a>
+    </article>
+    <article class="biz-card" data-cat="Retail" data-name="butts county farm & supply">
+      <div class="card-icon">🌾</div>
+      <div class="card-body">
+        <div class="card-top">
+          <span class="cat-badge" style="background:#1abc9c15;color:#1abc9c">Retail</span>
+        </div>
+        <h3 class="card-name">
+          <a href="/businesses/butts-county-farm-supply.html">Hasty Enterprises</a>
+        </h3>
+        <p class="card-desc">Your local farm store for livestock feed, seed, fertilizer, fencing, tools, and country living supplies. Serving farmers…</p>
+        <div class="card-meta">
+          <span class="card-addr">📍 808 S Mulberry St, Jackson, GA 30233</span>
+          <span class="card-phone">📞 (470) 251-5454</span>
+        </div>
+        <div class="card-tags"><span class="tag">Farm Supply</span><span class="tag">Feed</span><span class="tag">Hardware</span></div>
+      </div>
+      <a href="/businesses/butts-county-farm-supply.html" class="card-cta">View Details →</a>
+    </article>
+  </div>
+  <div id="noResults">
+    <div style="font-size:3rem">🔍</div>
+    <p>No businesses found. Try a different search or category.</p>
+    <a href="/add-listing.html" style="color:var(--primary);font-weight:700">Add a business →</a>
+  </div>
+</main>
+
+<div class="cta-band">
+  <h2>Own a Business in Butts County?</h2>
+  <p>List your business for free — no credit card, no catch. Join the Butts County community directory today.</p>
+  <a href="/add-listing.html" class="btn-white">+ Add Free Listing</a>
+</div>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="logo">🍑 <b>Butts County</b> Local</div>
+        <p>The free local business directory for Butts County, GA. Connecting the community since 2025.</p>
+        <div class="footer-socials">
+          <a href="#" title="Facebook">📘</a>
+          <a href="#" title="Instagram">📷</a>
+          <a href="#" title="X / Twitter">🐦</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <a href="/index.html">Browse All</a>
+        <a href="/blog.html">Blog &amp; Guides</a>
+        <a href="/events.html">Events Calendar</a>
+        <a href="/deals.html">Deals &amp; Specials</a>
+        <a href="/march-2026-business-spotlight.html">Business Spotlight</a>
+      </div>
+      <div class="footer-col">
+        <h4>Business Owners</h4>
+        <a href="/add-listing.html">Add Free Listing</a>
+        <a href="/advertise.html">Advertise With Us</a>
+        <a href="/contact.html">Contact Us</a>
+        <a href="https://www.buttscounty.org" target="_blank">Butts County Gov</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="/about.html">About Us</a>
+        <a href="/new-to-jackson.html">New Resident Guide</a>
+        <a href="/privacy.html">Privacy Policy</a>
+        <a href="/terms.html">Terms of Service</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Butts County Local · Not affiliated with Butts County Government or Butts County Schools</span>
+      <span><a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a></span>
+    </div>
+  </footer>
+  <script>
+    document.addEventListener('click', function(e){
+      var nav = document.getElementById('mainNav');
+      var burger = document.querySelector('.burger');
+      if(nav && !nav.contains(e.target) && burger && !burger.contains(e.target)){
+        nav.classList.remove('open');
+      }
+    });
+  </script>
+
+<script>
+  const pills = document.querySelectorAll('.cat-pill');
+  let activeCat = 'all';
+  let searchTerm = '';
+
+  pills.forEach(p => p.addEventListener('click', () => {
+    pills.forEach(x => x.classList.remove('active'));
+    p.classList.add('active');
+    activeCat = p.dataset.cat;
+    filterCards();
+  }));
+
+  document.getElementById('searchInput').addEventListener('input', function(){
+    searchTerm = this.value.toLowerCase();
+    filterCards();
+  });
+
+  function doSearch() {
+    searchTerm = document.getElementById('searchInput').value.toLowerCase();
+    filterCards();
+  }
+
+  document.getElementById('searchInput').addEventListener('keydown', function(e){
+    if(e.key==='Enter') doSearch();
+  });
+
+  function filterCards() {
+    const cards = document.querySelectorAll('.biz-card');
+    let visible = 0;
+    cards.forEach(card => {
+      const catMatch = activeCat === 'all' || card.dataset.cat === activeCat;
+      const nameMatch = !searchTerm || card.dataset.name.includes(searchTerm);
+      const show = catMatch && nameMatch;
+      card.style.display = show ? '' : 'none';
+      if(show) visible++;
+    });
+    document.getElementById('listCount').textContent = `Showing ${visible} business${visible!==1?'es':''}`;
+    document.getElementById('noResults').style.display = visible === 0 ? 'block' : 'none';
+  }
+
+  const params = new URLSearchParams(window.location.search);
+  const catParam = params.get('cat');
+  if(catParam) {
+    const pill = Array.from(pills).find(p => p.dataset.cat === catParam);
+    if(pill) pill.click();
+  }
+</script>
+</body>
+</html>
